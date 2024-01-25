@@ -3,8 +3,12 @@
 
 @import "{{ site.theme }}";
 
-.main-content {
-    max-width: 75%;
+
+/* Media query for screens narrower than 600px */
+@media screen and (max-width: 600px) {
+  .main-content * {
+    text-align: center; /* Center text for smaller screens */
+  }
 }
 
 .main-nav {
@@ -27,6 +31,21 @@ nav ul {
   color: #01588c;
 }
 
+.page-header {
+    padding: 1rem 1rem;
+}
+
+.page-header {
+  color: #e8cf4c;
+  text-align: center;
+  background-color: #5100a2;
+  background-image: linear-gradient(120deg, #270e71, #80006c);
+}
+
+.project-name {
+  margin-bottom: 0.5rem;
+}
+
 nav li {
   display: inline-block;
 }
@@ -44,10 +63,42 @@ nav li {
   -moz-transition: all .25s;
   -o-transition: all .25s;
   transition: all .25s;
-  background-color: #EEEEEE;
+  background-color: #0000;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #e8cf4c;
+  color: #e8cf4c;
+}
+
+/* Change color of headings */
+.main-content h1, .main-content h2, .main-content h3, .main-content h4, .main-content h5, .main-content h6 {
+  color: #6400c8;
+}
+
+.main-nav li a:hover {
+  background-color: #ffdc53;
+  color: #27024d;
 }
 
 
 body {
   font-size: 21px;
+}
+
+/* Google maps iframe formatting */
+
+.maps-iframe {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 600px;
+}
+
+.maps-iframe iframe {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
